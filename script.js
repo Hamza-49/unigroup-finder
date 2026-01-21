@@ -25,9 +25,9 @@ function updateLogo(theme) {
     const logoImg = document.getElementById('main-logo');
     if (logoImg) {
         if (theme === 'dark') {
-            logoImg.src = 'icon-dark-mood.png'; // صورة الوضع الليلي
+            logoImg.src = 'icon-dark-mood.png';
         } else {
-            logoImg.src = 'icon-light-mood.png';   // صورة الوضع النهاري
+            logoImg.src = 'icon-light-mood.png';
         }
     }
 }
@@ -45,15 +45,14 @@ function toggleTheme() {
     if (body.classList.contains('dark-mode')) {
         btn.textContent = '☀️';
         localStorage.setItem('theme', 'dark');
-        updateLogo('dark'); // <-- تحديث الشعار للداكن
+        updateLogo('dark'); 
     } else {
         btn.textContent = '🌙';
         localStorage.setItem('theme', 'light');
-        updateLogo('light'); // <-- تحديث الشعار للفاتح
+        updateLogo('light'); 
     }
 }
 
-// تعديل دالة فحص الثيم عند فتح الموقع
 function checkTheme() {
     const savedTheme = localStorage.getItem('theme');
     const btn = document.getElementById('theme-toggle');
@@ -61,9 +60,9 @@ function checkTheme() {
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
         if(btn) btn.textContent = '☀️';
-        updateLogo('dark'); // <-- استرجاع شعار الوضع الداكن
+        updateLogo('dark'); 
     } else {
-        updateLogo('light'); // <-- الوضع الافتراضي
+        updateLogo('light');
     }
 }
 

@@ -14,7 +14,6 @@
         "fail_msg": "لم يتم العثور على مجموعة تناسب هذا الاسم",
         "placeholder_start": "من (مثلاً A)",
         "placeholder_end": "إلى (مثلاً H)",
-        "search_btn": "بحث عن المجموعة",
         "download_app": "📥 تحميل تطبيق الأندرويد",
         "placeholder_name": "مثلاً: El Hamdaoui"
     },
@@ -33,7 +32,6 @@
         "fail_msg": "Aucun groupe correspondant trouvé",
         "placeholder_start": "De (ex. A)",
         "placeholder_end": "À (ex. H)",
-        "search_btn": "Chercher mon groupe",
         "download_app": "📥 Télécharger l'app Android",
         "placeholder_name": "ex. El Idrissi"
     },
@@ -52,7 +50,6 @@
         "fail_msg": "No matching group found",
         "placeholder_start": "From (e.g. A)",
         "placeholder_end": "To (e.g. H)",
-        "search_btn": "Search Group",
         "download_app": "📥 Download Android App",
         "placeholder_name": "e.g. Smith"
     }
