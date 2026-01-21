@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniGroup Finder</title>
+    <link rel="icon" href="icon.png?v=2" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="site-name">
+            <span class="desktop-text" data-i18n="site_name">محدد المجموعات الجامعية</span>
+            <span class="mobile-text">UNI</span>
+        </div>
+
+        <div class="logo-container">
+            <img src="icon-light-mood.png" alt="Logo" id="main-logo">
+        </div>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()">
+                🌙
+            </button>
+
+            <div class="lang-buttons desktop-only">
+                <button onclick="setLang('ar')">AR</button>
+                <button onclick="setLang('fr')">FR</button>
+                <button onclick="setLang('en')">EN</button>
+            </div>
+
+            <div class="hamburger-menu" onclick="toggleMobileMenu()">
+                ☰
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <span class="close-btn" onclick="toggleMobileMenu()">&times;</span>
+        
+        <p data-i18n="select_lang">اختر اللغة</p>
+        <div class="mobile-lang-opts">
+            <button onclick="setLang('ar'); toggleMobileMenu()">العربية</button>
+            <button onclick="setLang('fr'); toggleMobileMenu()">Français</button>
+            <button onclick="setLang('en'); toggleMobileMenu()">English</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <h1 data-i18n="title">🔍 أين مجموعتي؟</h1>
+
+            <div class="step" id="step-1">
+                <label data-i18n="step1_label">كم عدد المجموعات؟</label>
+                <input type="number" id="group-count" min="1">
+                <button onclick="generateFields()" class="action-btn" data-i18n="step1_btn">إنشاء المجموعات</button>
+            </div>
+
+            <div class="step" id="step-2" style="display:none;">
+                <p class="desc" data-i18n="step2_desc">أدخل نطاق المجموعات</p>
+                <div id="dynamic-groups-container"></div>
+                <hr>
+                <label data-i18n="name_label">ما هو نسبك؟</label>
+                <input type="text" id="student-name" data-i18n-placeholder="placeholder_name">
+                <button onclick="findMyGroup()" class="action-btn" data-i18n="search_btn">بحث عن المجموعة</button>
+            </div>
+
+            <div id="result-area"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by <span class="creator-name">Hamza BOULHALA</span> © 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

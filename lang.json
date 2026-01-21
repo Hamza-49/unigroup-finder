@@ -1,0 +1,53 @@
+{
+    "ar": {
+        "site_name": "محدد المجموعات الجامعية",
+        "select_lang": "اختر لغة العرض",
+        "title": "🔍 أين مجموعتي؟",
+        "step1_label": "كم عدد المجموعات في هذه المادة؟",
+        "step1_btn": "إنشاء المجموعات",
+        "step2_desc": "أدخل الحروف أو الأسماء التي تبدأ وتنتهي بها كل مجموعة.",
+        "name_label": "ما هو نسبك (اللقب العائلي)؟",
+        "search_btn": "بحث عن المجموعة",
+        "error_num": "المرجو إدخال رقم صحيح",
+        "error_name": "المرجو كتابة النسب",
+        "success_msg": "أنت تنتمي للمجموعة رقم",
+        "fail_msg": "لم يتم العثور على مجموعة تناسب هذا الاسم",
+        "placeholder_start": "من (مثلاً A)",
+        "placeholder_end": "إلى (مثلاً H)",
+        "placeholder_name": "مثلاً: El Hamdaoui"
+    },
+    "fr": {
+        "site_name": "Sélecteur de Groupe",
+        "select_lang": "Choisir la langue",
+        "title": "🔍 Trouver mon groupe",
+        "step1_label": "Combien de groupes y a-t-il ?",
+        "step1_btn": "Générer les groupes",
+        "step2_desc": "Entrez le début et la fin de chaque groupe.",
+        "name_label": "Quel est votre nom de famille ?",
+        "search_btn": "Chercher mon groupe",
+        "error_num": "Veuillez entrer un nombre valide",
+        "error_name": "Veuillez entrer votre nom",
+        "success_msg": "Vous appartenez au Groupe",
+        "fail_msg": "Aucun groupe correspondant trouvé",
+        "placeholder_start": "De (ex. A)",
+        "placeholder_end": "À (ex. H)",
+        "placeholder_name": "ex. El Idrissi"
+    },
+    "en": {
+        "site_name": "University Group Finder",
+        "select_lang": "Select Language",
+        "title": "🔍 Find My Group",
+        "step1_label": "How many groups are there?",
+        "step1_btn": "Generate Groups",
+        "step2_desc": "Enter the start and end range for each group.",
+        "name_label": "What is your Last Name?",
+        "search_btn": "Search Group",
+        "error_num": "Please enter a valid number",
+        "error_name": "Please enter your last name",
+        "success_msg": "You belong to Group",
+        "fail_msg": "No matching group found",
+        "placeholder_start": "From (e.g. A)",
+        "placeholder_end": "To (e.g. H)",
+        "placeholder_name": "e.g. Smith"
+    }
+}
