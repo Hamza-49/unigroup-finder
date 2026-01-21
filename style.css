@@ -111,6 +111,40 @@ header {
     color: var(--primary);
 }
 
+/* --- قسم تحميل التطبيق --- */
+.download-section {
+    text-align: center;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #3DDC84; /* لون أندرويد الأخضر */
+    color: #fff; /* نص أبيض */
+    padding: 12px 25px;
+    border-radius: 50px; /* حواف دائرية بالكامل */
+    text-decoration: none; /* إزالة الخط تحت الرابط */
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(61, 220, 132, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* تأثير عند المرور بالفأرة */
+.download-btn:hover {
+    background-color: #35c475;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(61, 220, 132, 0.4);
+}
+
+/* في الوضع الليلي */
+body.dark-mode .download-btn {
+    background-color: #2b9e60; /* أخضر أغمق قليلاً للعين */
+    color: #fff;
+}
+
 /* --- Mobile Menu --- */
 .mobile-nav {
     position: fixed;
