@@ -14,7 +14,8 @@
         "fail_msg": "لم يتم العثور على مجموعة تناسب هذا الاسم",
         "placeholder_start": "من (مثلاً A)",
         "placeholder_end": "إلى (مثلاً H)",
-        "download_app": "📥 تحميل تطبيق الأندرويد",
+        "download_app_v8": "📥 تحميل النسخة الحديثة (Android 7+)",
+        "download_app_v7": "📥 تحميل النسخة القديمة (للأجهزة الضعيفة)",
         "placeholder_name": "مثلاً: El Hamdaoui"
     },
     "fr": {
@@ -32,7 +33,8 @@
         "fail_msg": "Aucun groupe correspondant trouvé",
         "placeholder_start": "De (ex. A)",
         "placeholder_end": "À (ex. H)",
-        "download_app": "📥 Télécharger l'app Android",
+        "download_app_v8": "📥 Télécharger version moderne (Android 7+)",
+        "download_app_v7": "📥 Télécharger version légère (Anciens appareils)",
         "placeholder_name": "ex. El Idrissi"
     },
     "en": {
@@ -50,7 +52,8 @@
         "fail_msg": "No matching group found",
         "placeholder_start": "From (e.g. A)",
         "placeholder_end": "To (e.g. H)",
-        "download_app": "📥 Download Android App",
+        "download_app_v8": "📥 Download Modern Version (Android 7+)",
+        "download_app_v7": "📥 Download Lite Version (Old Devices)",
         "placeholder_name": "e.g. Smith"
     }
 }
