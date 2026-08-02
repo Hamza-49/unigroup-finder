@@ -127,9 +127,9 @@ export function GroupForm({ language }: GroupFormProps) {
   }, [studentName, groupRanges, language]);
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4 sm:px-6">
+    <div className="w-full max-w-3xl mx-auto px-4 sm:px-8">
       {/* Step 1: Number of Groups */}
-      <div className="bg-cream dark:bg-primary-blue-dark dark:text-white retro-border p-6 sm:p-8 mb-6">
+      <div className="retro-border p-6 sm:p-8 mb-6">
         <label htmlFor="group-count" className="block text-lg sm:text-xl font-black mb-4">
           {t(language, 'step1_label')}
         </label>
@@ -175,29 +175,31 @@ export function GroupForm({ language }: GroupFormProps) {
 
       {/* Step 2: Group Ranges */}
       {step2Visible && (
-        <div className="bg-cream dark:bg-primary-blue-dark dark:text-white retro-border p-6 sm:p-8 mb-6">
+        <div className="retro-border p-6 sm:p-8 mb-6">
           <p className="text-base sm:text-lg mb-6 font-bold">{t(language, 'step2_desc')}</p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div className="space-y-5 mb-6">
             {groupRanges.map((range, index) => (
-              <div key={index} className="space-y-2">
-                <label className="block font-bold text-sm">G{index + 1}</label>
-                <div className="flex gap-2">
+              <div key={index} className="bg-white dark:bg-gray-800 border-3 border-black p-4 space-y-3">
+                <label className="block font-black text-base">Group {index + 1}</label>
+                <div className="flex gap-3 items-center">
+                  <span className="font-bold text-sm">From:</span>
                   <input
                     type="text"
                     value={range.start}
                     onChange={(e) => handleRangeChange(index, 'start', e.target.value)}
                     placeholder={t(language, 'placeholder_start')}
                     maxLength={1}
-                    className="flex-1 px-3 py-2 border-2 border-black text-center font-bold uppercase"
+                    className="flex-1 px-4 py-3 border-3 border-black text-center font-black text-lg uppercase bg-white text-black"
                   />
+                  <span className="font-bold text-sm">To:</span>
                   <input
                     type="text"
                     value={range.end}
                     onChange={(e) => handleRangeChange(index, 'end', e.target.value)}
                     placeholder={t(language, 'placeholder_end')}
                     maxLength={1}
-                    className="flex-1 px-3 py-2 border-2 border-black text-center font-bold uppercase"
+                    className="flex-1 px-4 py-3 border-3 border-black text-center font-black text-lg uppercase bg-white text-black"
                   />
                 </div>
               </div>
@@ -207,8 +209,8 @@ export function GroupForm({ language }: GroupFormProps) {
           {errors.ranges && <p className="text-red-600 dark:text-red-400 text-sm mb-4">{errors.ranges}</p>}
 
           {/* Student Name */}
-          <div className="mb-6">
-            <label htmlFor="student-name" className="block text-lg sm:text-lg font-bold mb-2">
+          <div className="mb-6 bg-white dark:bg-gray-800 border-3 border-black p-4">
+            <label htmlFor="student-name" className="block text-lg font-black mb-3">
               {t(language, 'name_label')}
             </label>
             <input
@@ -220,9 +222,9 @@ export function GroupForm({ language }: GroupFormProps) {
                 setErrors({ ...errors, studentName: '' });
               }}
               placeholder={t(language, 'placeholder_name')}
-              className="w-full px-4 py-3 border-3 border-black font-bold text-base sm:text-lg"
+              className="w-full px-4 py-3 border-3 border-black font-bold text-base bg-white text-black"
             />
-            {errors.studentName && <p className="text-red-600 dark:text-red-400 text-sm mt-2">{errors.studentName}</p>}
+            {errors.studentName && <p className="text-red-600 text-sm mt-2 font-bold">{errors.studentName}</p>}
           </div>
 
           {/* Search Button */}

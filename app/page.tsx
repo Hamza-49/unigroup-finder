@@ -45,15 +45,17 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream dark:bg-primary-blue-dark dark:text-white">
+    <div className="min-h-screen flex flex-col relative">
       <DecorativeElements />
-      <Header currentLang={language} onLanguageChange={handleLanguageChange} />
+      <div className="relative z-10">
+        <Header currentLang={language} onLanguageChange={handleLanguageChange} />
 
-      <main className="flex-1 py-8 sm:py-12">
-        <GroupForm language={language} />
-      </main>
+        <main className="flex-1 py-8 sm:py-12">
+          <GroupForm language={language} />
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
 
       <OnboardingModal
         isOpen={showOnboarding}

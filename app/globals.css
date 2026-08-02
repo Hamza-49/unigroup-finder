@@ -18,7 +18,7 @@
 }
 
 html {
-  background-color: var(--color-cream);
+  background-color: var(--color-primary-blue);
   color: var(--color-black);
   scroll-behavior: smooth;
   width: 100vw;
@@ -28,11 +28,11 @@ html {
 body {
   width: 100%;
   overflow-x: hidden;
+  background-color: var(--color-primary-blue);
   background-image: 
-    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,0,0,0.05) 39px, rgba(0,0,0,0.05) 40px),
-    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,0,0,0.05) 39px, rgba(0,0,0,0.05) 40px);
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.08) 39px, rgba(255,255,255,0.08) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.08) 39px, rgba(255,255,255,0.08) 40px);
   background-size: 40px 40px;
-  background-color: var(--color-cream);
   font-family: system-ui, -apple-system, sans-serif;
   min-height: 100vh;
   position: relative;
@@ -66,10 +66,29 @@ h2 {
 .retro-border {
   border: 3px solid var(--color-black);
   box-shadow: 4px 4px 0px var(--color-black);
+  background-color: var(--color-cream);
+}
+
+.retro-border input,
+.retro-border button {
+  border: 2px solid var(--color-black);
+  box-shadow: 2px 2px 0px var(--color-black);
+}
+
+.retro-border button:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--color-black);
 }
 
 body.dark .retro-border {
+  background-color: var(--color-primary-blue-dark);
   box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.3);
+}
+
+body.dark .retro-border input,
+body.dark .retro-border button {
+  border: 2px solid var(--color-black);
+  box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.2);
 }
 
 input, textarea, select {

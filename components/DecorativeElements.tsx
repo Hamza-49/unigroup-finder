@@ -2,15 +2,15 @@
 
 export function DecorativeElements() {
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
       {/* Floppy Disk - Bottom Left */}
       <svg
-        className="absolute bottom-12 left-4 sm:bottom-20 sm:left-8 w-16 h-16 sm:w-20 sm:h-20"
+        className="absolute bottom-8 left-4 sm:bottom-16 sm:left-6 w-24 h-24 sm:w-32 sm:h-32 transform -rotate-12"
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect x="10" y="15" width="80" height="70" fill="#1e3a5f" stroke="#000" strokeWidth="3" />
+        <rect x="10" y="15" width="80" height="70" fill="#f5e6d3" stroke="#000" strokeWidth="3" />
         <rect x="20" y="25" width="60" height="25" fill="#6b5344" stroke="#000" strokeWidth="2" />
         <rect x="15" y="60" width="70" height="8" fill="#d4a13d" stroke="#000" strokeWidth="2" />
         <text x="50" y="78" fontSize="12" fontWeight="bold" textAnchor="middle" fill="#000">
@@ -20,7 +20,7 @@ export function DecorativeElements() {
 
       {/* Old CRT Computer - Right Side */}
       <svg
-        className="absolute top-24 right-2 sm:right-4 w-20 h-20 sm:w-24 sm:h-24"
+        className="absolute top-20 right-4 sm:right-8 w-28 h-28 sm:w-40 sm:h-40 transform rotate-3"
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ export function DecorativeElements() {
 
       {/* Roman Bust/Statue - Right Center */}
       <svg
-        className="absolute top-1/2 right-2 sm:right-6 w-16 h-20 sm:w-20 sm:h-24 -translate-y-1/2"
+        className="absolute top-1/2 right-2 sm:right-6 w-24 h-32 sm:w-36 sm:h-48 -translate-y-1/2 transform -rotate-6"
         viewBox="0 0 60 80"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ export function DecorativeElements() {
 
       {/* Smiley Balloon - Top Center */}
       <svg
-        className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-20 sm:w-20 sm:h-24"
+        className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-32 sm:w-32 sm:h-40 transform rotate-12"
         viewBox="0 0 100 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ export function DecorativeElements() {
 
       {/* Crescent Moon - Top Right Area */}
       <svg
-        className="absolute top-32 right-1/4 w-14 h-14 sm:w-16 sm:h-16"
+        className="absolute top-24 right-1/4 w-20 h-20 sm:w-28 sm:h-28 transform -rotate-45"
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ export function DecorativeElements() {
 
       {/* Rotary Phone - Left Center */}
       <svg
-        className="absolute top-1/2 left-2 sm:left-6 w-16 h-16 sm:w-20 sm:h-20 -translate-y-1/2"
+        className="absolute top-1/2 left-2 sm:left-6 w-24 h-24 sm:w-32 sm:h-32 -translate-y-1/2 transform rotate-6"
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +120,7 @@ export function DecorativeElements() {
 
       {/* Decorative shapes - Zigzag pattern upper left */}
       <svg
-        className="absolute top-8 left-8 w-12 h-12 sm:w-14 sm:h-14"
+        className="absolute top-8 left-8 w-16 h-16 sm:w-20 sm:h-20 transform -rotate-3"
         viewBox="0 0 60 60"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +145,7 @@ export function DecorativeElements() {
 
       {/* Floating star burst - Bottom right area */}
       <svg
-        className="absolute bottom-20 right-8 w-10 h-10 sm:w-12 sm:h-12"
+        className="absolute bottom-20 right-8 w-16 h-16 sm:w-20 sm:h-20 transform rotate-12"
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
