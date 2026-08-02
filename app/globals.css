@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-blue: #1e3a5f;
+  --color-primary-blue-dark: #0f1f35;
+  --color-cream: #f5e6d3;
+  --color-cream-dark: #d4c4a8;
+  --color-brown: #6b5344;
+  --color-yellow: #d4a13d;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--color-cream);
+  color: var(--color-black);
+  scroll-behavior: smooth;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,0,0,0.05) 39px, rgba(0,0,0,0.05) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,0,0,0.05) 39px, rgba(0,0,0,0.05) 40px);
+  background-size: 40px 40px;
+  background-color: var(--color-cream);
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+body.dark {
+  background-color: var(--color-primary-blue-dark);
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.03) 39px, rgba(255,255,255,0.03) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.03) 39px, rgba(255,255,255,0.03) 40px);
+  color: var(--color-white);
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Retro card/input styles */
+.retro-border {
+  border: 3px solid var(--color-black);
+  box-shadow: 4px 4px 0px var(--color-black);
+}
+
+body.dark .retro-border {
+  box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.3);
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* RTL support */
+html[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+body.dark ::-webkit-scrollbar-track {
+  background: var(--color-primary-blue-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brown);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-yellow);
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible for better accessibility */
+:focus-visible {
+  outline: 3px solid var(--color-yellow);
+  outline-offset: 2px;
+}
+
+body.dark :focus-visible {
+  outline-color: var(--color-yellow);
+}
