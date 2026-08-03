@@ -526,6 +526,7 @@ body.dark-mode .creator-name { color: var(--mustard); }
   top: 35%;
   left: 4%;
   z-index: 999;
+    display: none;
 }
 
 /* ===== CARD ===== */
