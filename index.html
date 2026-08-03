@@ -2,62 +2,91 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniGroup Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Uni Group Finder</title>
     <link rel="icon" href="icon.jpg" type="image/jpg">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
     <script> window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };</script>
     <script defer src="/_vercel/insights/script.js"></script>
+    <script src="/music.js" defer></script>
 </head>
 <body>
 
+    <!-- LOADING SCREEN -->
+    <div class="loader-overlay" id="loaderOverlay">
+        <div class="loader-vinyl"></div>
+        <p class="loader-text">LOADING<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+    </div>
+
+    <!-- Decorative retro layer (fixed, fully contained, never causes overflow) -->
+    <div class="decor-layer hide-on-mobile" aria-hidden="true">
+        <img class="decor decor-moon" src="/assets/img/decor-moon.png" alt="">
+        <img class="decor decor-crt" src="/assets/img/decor-crt.PNG" alt="">
+        <img class="decor decor-phone" src="/assets/img/decor-phone.PNG" alt="">
+        <img class="decor decor-bust" src="/assets/img/decor-bust.PNG" alt="">
+        <img class="decor decor-floppy" src="/assets/img/decor-floppy.PNG" alt="">
+        <img class="decor decor-floppy-1" src="/assets/img/decor-floppy.PNG" alt="">
+        <img class="decor decor-floppy-2" src="/assets/img/decor-floppy.PNG" alt="">
+        <img class="decor decor-balloon" src="/assets/img/decor-balloon.png" alt="">
+        <svg class="decor decor-star" viewBox="0 0 60 60"><path d="M30 4l6.5 17.5L54 27l-13.5 12L44 57 30 46 16 57l3.5-18L6 27l17.5-5.5z" fill="#8FC1B5" stroke="#141414" stroke-width="3.5" stroke-linejoin="round"/></svg>
+    </div>
+
+
     <header>
         <div class="site-name">
-            <span class="desktop-text" data-i18n="site_name">محدد المجموعات الجامعية</span>
+            <span class="desktop-text" data-i18n="site_name">Uni Group Finder</Group-Finder></span>
             <span class="mobile-text">UNI</span>
         </div>
 
-        <div class="logo-container">
-            <img src="icon-light-mood.png" alt="Logo" id="main-logo">
+        <div class="logo-badge">
+            <img src="/assets/logo/logo.PNG" alt="Logo" id="main-logo">
         </div>
 
         <div class="header-actions">
-            <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()">
+            <div class="lang-buttons desktop-only">
+                <button class="lang-btn" data-lang="ar" onclick="setLang('ar')">AR</button>
+                <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+                <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+            </div>
+
+            <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()" aria-label="Toggle theme">
                 🌙
             </button>
 
-            <div class="lang-buttons desktop-only">
-                <button onclick="setLang('ar')">AR</button>
-                <button onclick="setLang('fr')">FR</button>
-                <button onclick="setLang('en')">EN</button>
-            </div>
-
-            <div class="hamburger-menu" onclick="toggleMobileMenu()">
+            <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
                 ☰
-            </div>
+            </button>
         </div>
     </header>
 
     <div class="mobile-nav" id="mobileNav">
-        <span class="close-btn" onclick="toggleMobileMenu()">&times;</span>
-
-        <p data-i18n="select_lang">اختر اللغة</p>
-        <div class="mobile-lang-opts">
-            <button onclick="setLang('ar'); toggleMobileMenu()">العربية</button>
-            <button onclick="setLang('fr'); toggleMobileMenu()">Français</button>
-            <button onclick="setLang('en'); toggleMobileMenu()">English</button>
+        <div class="mobile-nav-inner">
+            <span class="close-btn" id="mobileNavClose">&times;</span>
+            <p data-i18n="select_lang">اختر اللغة</p>
+            <div class="mobile-lang-opts">
+                <button data-lang="ar" onclick="setLang('ar'); closeMobileMenu();">العربية</button>
+                <button data-lang="fr" onclick="setLang('fr'); closeMobileMenu();">Français</button>
+                <button data-lang="en" onclick="setLang('en'); closeMobileMenu();">English</button>
+            </div>
         </div>
     </div>
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
     <div class="main-content">
         <div class="container">
-            <h1 data-i18n="title">🔍 أين مجموعتي؟</h1>
+            <h1><span class="title-icon">🔍</span> <span data-i18n="title">أين مجموعتي؟</span></h1>
 
             <div class="step" id="step-1">
                 <label data-i18n="step1_label">كم عدد المجموعات؟</label>
-                <input type="number" id="group-count" min="1">
-                <button onclick="generateFields()" class="action-btn" data-i18n="step1_btn">إنشاء المجموعات</button>
+                <div class="stepper-row">
+                    <button type="button" class="stepper-btn" id="countMinus" aria-label="minus">−</button>
+                    <input type="text" inputmode="numeric" id="group-count" value="" placeholder="0">
+                    <button type="button" class="stepper-btn" id="countPlus" aria-label="plus">+</button>
+                </div>
+                <p class="field-error" id="count-error"></p>
+                <button onclick="generateFields()" class="action-btn btn-btn" data-i18n="step1_btn">إنشاء المجموعات</button>
             </div>
 
             <div class="step" id="step-2" style="display:none;">
@@ -71,21 +100,90 @@
 
             <div id="result-area"></div>
         </div>
+
+
+        <div class="stage hide-on-mobile">
+            <div class="player">
+
+                <!-- LEFT: vinyl + now playing -->
+                <div class="left">
+                    <div class="vinyl" id="vinyl"></div>
+                    <span class="note note1">♪</span>
+                    <div class="info">
+                        <span class="now">NOW PLAYING</span>
+                        <h3 id="title">Merrily We Roll Along</h3>
+                        <p id="artist">Looney Tunes — 1941</p>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- MIDDLE: transport controls -->
+                <div class="controls">
+                    <button onclick="prev()" title="Previous">◀◀</button>
+                    <button onclick="toggle()" id="play" title="Play/Pause">▶</button>
+                    <button onclick="next()" title="Next (random)">▶▶</button>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- RIGHT: waveform + progress -->
+                <div class="right">
+                    <div class="waveform" id="waveform"></div>
+                    <div class="time-row">
+                        <span id="currentTime">0:00</span>
+                        <input type="range" min="0" max="100" value="0" step="0.1" class="progress" id="progress">
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+
+                <button class="volume" id="volumeBtn" title="Mute/Unmute">🔊</button>
+            </div>
+
+        </div>
+        
+        <audio id="audio" preload="metadata"></audio>
+
     </div>
+
+    
+
+
+    
 
     <div class="download-section">
         <a href="app-v8a-release.apk" class="download-btn" download>
-            <span data-i18n="download_app_v8"></span> 
+            <span data-i18n="download_app_v8"></span>
         </a>
-        
-        <a href="app-v7a-release.apk" class="download-btn" download>
+
+        <a href="app-v7a-release.apk" class="download-btn download-btn-alt" download>
             <span data-i18n="download_app_v7"></span>
         </a>
     </div>
 
-    <footer>
-        <p>Created by <span class="creator-name">Hamza BOULHALA</span> © 2026</p>
-    </footer>
+    <div class="footer">
+        <p>Created by Hamza BOULHALA © 2026</p>
+        <div class="badge">Goliath</div>
+    </div>
+
+    <!-- Onboarding modal -->
+    <div class="onboarding-backdrop" id="onboardingBackdrop">
+        <div class="onboarding-modal">
+            <h2 data-i18n="onboarding_title">مرحباً بك في Uni Group Finder</h2>
+            <p class="onboarding-desc" data-i18n="onboarding_desc">اعثر على مجموعتك بناءً على اسمك.</p>
+            <ol class="onboarding-steps">
+                <li data-i18n="onboarding_step1">حدد عدد المجموعات</li>
+                <li data-i18n="onboarding_step2">أدخل نطاق كل مجموعة (من/إلى)</li>
+                <li data-i18n="onboarding_step3">أدخل نسبك (اسم العائلة)</li>
+                <li data-i18n="onboarding_step4">اضغط بحث لمعرفة مجموعتك</li>
+            </ol>
+            <label class="onboarding-checkbox">
+                <input type="checkbox" id="dontShowAgain">
+                <span data-i18n="onboarding_dont_show">لا تُظهر هذا مرة أخرى</span>
+            </label>
+            <button class="action-btn" id="onboardingStartBtn" data-i18n="onboarding_start_btn">فهمت، ابدأ</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
