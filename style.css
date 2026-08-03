@@ -83,7 +83,7 @@ h1, h2, .action-btn, .stepper-btn, .logo-badge, .site-name .desktop-text {
 .decor-moon    { width: 9vw;  max-width: 130px;  min-width: 100px; top: 3%;  left: 58%; transform: rotate(-6deg); }
 .decor-star    { width: 4vw;  max-width: 50px;  min-width: 26px; top: 20%; left: 2%; }
 .decor-balloon { width: 8vw;  max-width: 150px; min-width: 86px; top: 25%; left: 25%; transform: rotate(15deg); z-index: 6; }
-.decor-crt     { width: 15vw; max-width: 230px; min-width: 164px; top: 83%; left: 30%; transform: rotate(-3deg); z-index: 6; }
+.decor-crt     { width: 15vw; max-width: 230px; min-width: 164px; top: 83%; left: 20%; transform: rotate(-3deg); z-index: 6; }
 .decor-phone   { width: 9vw;  max-width: 170px; min-width: 90px; top: 64%; left: 68%; transform: rotate(8deg); z-index: 6; }
 .decor-bust    { width: 12vw;  max-width: 390px;  min-width: 128px; top: 40%; left: 98%; transform: rotate(8deg); }
 .decor-floppy  { width: 6.5vw; max-width: 86px; min-width: 50px; top: 10%; left: 4%; transform: rotate(10deg);}
